@@ -33,7 +33,7 @@ The examples are:
     Improves `ex03` by implementing data fetching with Suspense, enabling easy orchestration of intentional, user-friendly loading sequences. 
 
 ### Comments on example ex04
-In contrast to the 3rd party `useSWR` hook (from the `swr` library) used in example `ex03`, in this example a custom `useFetch` hook, designed to be compatible with the new Suspense mechanism, is used for data fetching (see further comments in `fetch.js`. 
+In contrast to the `useSWR` hook - from the 3rd party [swr](https://swr.now.sh/) library - used in example `ex03`, in this example a custom `useFetch` hook, designed to be compatible with the new Suspense mechanism, is used for data fetching (see further comments in `fetch.js`). 
 
 The data fetching pattern implemented in this example differs significantly from `ex03`:
 
