@@ -45,7 +45,7 @@ The data fetching pattern implemented in this example differs significantly from
 
     The React documentation refers to this pattern as [*fetch-on-render*](https://reactjs.org/docs/concurrent-mode-suspense.html#approach-1-fetch-on-render-not-using-suspense). 
 
-*   In `ex04`, data fetching starts *before rendering the component*, in the `App` component, the `selectUser` event handler initiates work in the background via a `startTransition` call that runs the following:
+*   In `ex04`, data fetching starts *before rendering the component*; in the `App` component, the `selectUser` event handler initiates work in the background via a `startTransition` call that runs the following:
     
     *   A custom `prefetch` method (see `src/ex04/fetch.js`), which immediately kicks off data fetching for the selected user. 
     
