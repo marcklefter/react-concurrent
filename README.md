@@ -32,18 +32,22 @@ The examples are:
 
     Improves `ex03` by implementing data fetching with Suspense, enabling easy orchestration of intentional, user-friendly loading sequences. 
 
+To run each example, see `src/index.js`.
+
 ### Comments on example ex04
-In contrast to the `useSWR` hook - from the 3rd party [swr](https://swr.now.sh/) library - used in example `ex03`, in this example a custom `useFetch` hook, designed to be compatible with the new Suspense mechanism, is used for data fetching (see further comments in `fetch.js`). 
+In contrast to the `useSWR` hook - from the 3rd party [swr](https://swr.now.sh/) library - used in `ex03`, in this example a custom `useFetch` hook, designed to be compatible with the new Suspense mechanism, is used for data fetching (see further comments in `src/ex04/fetch.js`). 
 
 The data fetching pattern implemented in this example differs significantly from `ex03`:
 
-*   In `ex03`, a component, such as `User`, is rendered first *before* data fetching commences. The built-in `useEffect` hook is typically used for managing data fetching (the 3rd party `useSWR` hook utilizes `useEffect` in its implementation) and an effect is run after a component's initial render. 
+*   In `ex03`, a component such as `User` is rendered first, *before* data fetching commences. 
+
+    The built-in `useEffect` hook is typically used for managing data fetching (the 3rd party `useSWR` hook utilizes `useEffect` in its implementation) and an effect is run _after_ a component's initial render. 
 
     The React documentation refers to this pattern as [*fetch-on-render*](https://reactjs.org/docs/concurrent-mode-suspense.html#approach-1-fetch-on-render-not-using-suspense). 
 
 *   In `ex04`, data fetching starts *before rendering the component*, in the `App` component, the `selectUser` event handler initiates work in the background via a `startTransition` call that runs the following:
     
-    *   A custom `prefetch` method (see `fetch.js`), which immediately kicks off data fetching for the selected user. 
+    *   A custom `prefetch` method (see `src/ex04/fetch.js`), which immediately kicks off data fetching for the selected user. 
     
     * A low-priority state update of the `showProfile` flag.
 
@@ -57,10 +61,9 @@ The data fetching pattern implemented in this example differs significantly from
 
 [React Concurrent Mode documentation](https://reactjs.org/docs/concurrent-mode-intro.html)
 
-[Dan Abramov's "inaugural talk about Concurrent Mode](https://www.youtube.com/watch?v=nLF0n9SACd4)
+[Dan Abramov's "inaugural talk" about Concurrent Mode](https://www.youtube.com/watch?v=nLF0n9SACd4)
 
 [Data Fetching with Suspense in Relay/GraphQL](https://www.youtube.com/watch?v=Tl0S7QkxFE4)
 
 ## Contact
-Marc Klefter
-marc@remotifi.com
+Marc Klefter | marc@remotifi.com
