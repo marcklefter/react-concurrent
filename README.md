@@ -32,6 +32,10 @@ The examples are:
 
     Improves `ex03` by implementing data fetching with Suspense, enabling easy orchestration of intentional, user-friendly loading sequences. 
 
+*   `ex05`
+
+    A rewrite of `ex04` that utilizes a third 3rd party library with Suspense integration, [react-query](https://github.com/tannerlinsley/react-query), for data fetching. 
+
 To run each example, see `src/index.js`.
 
 ### Comments on example ex04
