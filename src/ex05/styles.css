@@ -1,0 +1,21 @@
+.image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "." ".";
+}
+
+.row {
+  display: flex;
+  text-align: center;
+}
+
+.column {
+  flex: 50%;
+}

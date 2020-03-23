@@ -58,16 +58,20 @@ export default function App() {
     setShowProfile(false);
   };
 
+  const Fallback = () => showProfile
+    ? `Loading ${currentUser}...`
+    : null;
+
   return (
-    showProfile
-      ? (
-        // this suspense boundary catches the promise thrown by the User component if its data is unavailable.
-        //
-        // Note: The isPending flag will be false until the transition completes (= the component's data has been 
-        // fetched) or up until the transition timeout; in the latter case, the Suspense fallback will be shown.
-        <Suspense fallback={`Loading ${currentUser}...`}>
-          {/* this error boundary catches any error(s) that may occur during data fetching. */}
-          <ErrorBoundary>
+    // this suspense boundary catches the promise thrown by the User component if its data is unavailable.
+    //
+    // Note: The isPending flag will be false until the transition completes (= the component's data has been 
+    // fetched) or up until the transition timeout; in the latter case, the Suspense fallback will be shown.
+    <Suspense fallback={<Fallback />}>
+      {/* this error boundary catches any error(s) that may occur during data fetching. */}
+      <ErrorBoundary>
+        {showProfile
+          ? <>
             <button onClick={onBack}>Back</button>
 
             <div className="row" style={{ flexDirection: 'column' }}>
@@ -84,21 +88,13 @@ export default function App() {
               </div>
 
               <div className="column">
-                {/* this suspense boundary allows us to load followers "lazily", i.e. ensuring that rendering the 
-                critical User component is not delayed by not-as-vital Followers component. */}
                 <Suspense fallback={`Loading followers...`}>
-                  {/* this suspense boundary allows us to load followers "lazily", i.e. ensuring that rendering the 
-                  critical User component is not delayed by not-as-vital Followers component. */}
                   <Followers endpoint={`${BASE_URL}/${currentUser}/followers`} />
                 </Suspense>
               </div>
             </div>
-          </ErrorBoundary>
-        </Suspense>
-      )
-      : (
-        <Suspense fallback={null}>
-          {users.map(user => (
+          </>
+          : users.map(user => (
             // eslint-disable-next-line jsx-a11y/anchor-is-valid
             <a
               key={user}
@@ -112,9 +108,8 @@ export default function App() {
               pending indicator to the user. */}
               {user} {(isPending && currentUser === user) && '...'}
             </a>
-          ))
-          }
-        </Suspense >
-      )
+          ))}
+      </ErrorBoundary>
+    </Suspense>
   )
 }

@@ -10,6 +10,7 @@ import './index.css';
 // import App from './ex02';
 // import App from './ex03';
 import App from './ex04';
+// import App from './ex05';
 
 // ...
 // Enables Concurrent Mode.
