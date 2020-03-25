@@ -12,6 +12,7 @@
     "react-dom": "^0.0.0-experimental-aae83a4b9",
     "react-query": "^1.0.29",
     "react-scripts": "3.4.0",
+    "swr": "^0.1.18",
     "victory": "^34.1.1"
   },
   "scripts": {
