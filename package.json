@@ -7,7 +7,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "react": "^0.0.0-experimental-aae83a4b9",
     "react-dom": "^0.0.0-experimental-aae83a4b9",
     "react-query": "^1.0.29",
