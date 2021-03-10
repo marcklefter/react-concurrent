@@ -67,7 +67,5 @@ The data fetching pattern implemented in this example differs significantly from
 
 [Dan Abramov's "inaugural talk" about Concurrent Mode](https://www.youtube.com/watch?v=nLF0n9SACd4)
 
-[Data Fetching with Suspense in Relay/GraphQL](https://www.youtube.com/watch?v=Tl0S7QkxFE4)
-
 ## Contact
-Marc Klefter | marc@remotifi.com
+Marc Klefter | marc.klefter@edument.se

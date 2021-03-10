@@ -1,7 +1,7 @@
 import React, {
   useState,
 
-  useDeferredValue
+  unstable_useDeferredValue as useDeferredValue
 } from 'react';
 
 import Plot from './Plot';

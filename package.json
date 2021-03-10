@@ -6,14 +6,13 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "axios": "^0.19.2",
-    "lodash": "^4.17.15",
-    "react": "^0.0.0-experimental-aae83a4b9",
-    "react-dom": "^0.0.0-experimental-aae83a4b9",
-    "react-query": "^1.0.29",
-    "react-scripts": "3.4.0",
-    "swr": "^0.1.18",
-    "victory": "^34.1.1"
+    "axios": "^0.21.1",
+    "react": "^0.0.0-experimental-73e900b0e",
+    "react-dom": "^0.0.0-experimental-73e900b0e",
+    "react-query": "2.26.4",
+    "react-scripts": "^4.0.3",
+    "swr": "^0.4.2",
+    "victory": "^35.4.10"
   },
   "scripts": {
     "start": "react-scripts start",
